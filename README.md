@@ -1,9 +1,9 @@
 # Country Information and News Retrieval Console App
 
-This Python console application is designed to retrieve and display information about a specific country using the Rest Countries API and the News API. It allows users to input a country name, this will fetch details such as the country's name, capital, population, region, and subregion, and write this information to a text file. Additionally, the app retrieves news articles related to the specified country and displays their titles, sources, and URLs.
+This Python console application is designed to retrieve and display information about a specific country using the Rest Countries API and the News API. It allows users to input a country name, fetch details such as the country's name, capital, population, region, and subregion, and write this information into a text file. Additionally, the app retrieves news articles related to the specified country and displays their titles, sources, and URLs.
 
 ## Prerequisites
-- Python 3.x
+- Python 3. x
 - `requests` module
 
 ## Setup
@@ -21,10 +21,10 @@ This Python console application is designed to retrieve and display information 
    python country_info_app.py
    ```
 4. Enter the name of the country when prompted.
-5. The script then retrieves and saves these information: 1.country name, languages,currencies 2. Related latest news articles about the country, date of news publications and URLs in a file named 'countries.txt'
+5. The script retrieves and saves this information: 1. country name, languages, currencies 2. Related latest news articles about the country, date of news publications, and URLs in a file named 'countries.txt'
 
-# The script requires access to the folowing APIs:
-https://restcountries.com/ for genral country infromation.
+# The script requires access to the following APIs:
+https://restcountries.com/ for general country information.
 https://newsapi.org/ for retrieving the latest news articles
 
 ## Code Explanation
@@ -33,7 +33,7 @@ https://newsapi.org/ for retrieving the latest news articles
 - The `get_country_info` function retrieves country information from the Rest Countries API and returns a dictionary containing details such as the country's name, capital, population, region, and subregion.
 - The `write_to_file` function writes the country information to a text file.
 - The `get_country_news` function retrieves news related to a specific country from the News API and returns a list of articles.
-- The `main` function serves as the entry point of the application, where users can input the country name and the app retrieves and displays the country information and news articles.
+- The `main` function serves as the application's entry point, where users can input the country name, and the app retrieves and displays the country information and news articles.
 
 ## To reuse the code for this application, note the following 
 - Ensure that valid API keys for the Rest Countries API and the News API are obtained and replaced with the placeholder values in the script with the actual API keys.
