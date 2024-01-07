@@ -36,3 +36,24 @@ def getNewsInfo(self):
         print('error! getting news information from the country')
       else:
         newsData = response.json()
+
+#api call to obtain weather information on the country selected above
+def getWeatherInfo(self):
+    #remove api - key
+    api_key = 'e92f077c81984a46baba3714a1d18d90'
+
+    endpoint = 'http://api.openweathermap.org/data/2.5/weather'
+
+    payload = {
+        'unit': 'metrics',
+        'appid': api_key
+    }
+    payload['q'] = self.userInput
+
+    response = requests.get(url= endpoint, params= payload)
+    checkConnection= response.status_code
+    if checkConnection != 200:
+      print('error!, Country does not exist')
+    else:
+      weatherData=response.json()
+  
