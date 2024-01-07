@@ -1,13 +1,13 @@
-# Country Information and News Retrieval Console App
+# Travel InfoHub Console App
 
-This Python console application is designed to retrieve and display information about a specific country using the Rest Countries API and the News API. It allows users to input a country name, fetch details such as the country's name, capital, population, region, and subregion, and write this information into a text file. Additionally, the app retrieves news articles related to the specified country and displays their titles, sources, and URLs.
+This Python console application is designed to assist prospective travelers in retrieving and displaying information about a specific country using the Rest Countries API, OpenWeather, and the News API. It allows users to input a country name, and fetch details such as the country's name, languages, currencies, and alternative spellings and write this information into a text file. Additionally, the app retrieves news articles related to the specified country and displays their titles, sources, and URLs. This app also helps with the provision of current weather updates of the prospective traveler's choice.
 
 ## Prerequisites
 - Python 3. x
 - `requests` module
 
 ## Setup
-1. Obtain API keys for the Rest Countries API and the News API.
+1. Obtain API keys for the Rest Countries API, OpenWeather API and the News API.
 2. Install the `requests` module using the following command:
    ```
    pip install requests
