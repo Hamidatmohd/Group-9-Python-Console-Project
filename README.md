@@ -34,13 +34,14 @@ https://api.openweathermap.org/data/2.5/weather for weather forecast
 - The 'tripInformation' class comprises methods for retrieving general country information, weather, and news data.
 - The `main` function:(tripInformation, trip.getGeneralInfo, trip.getNewsInfo,
 trip.getWeatherInfo) serves as the application's entry point, where users can input the country name, and the app retrieves and displays the country information, weather forecast, and news articles.
+- For a detailed explanation, check the comments in the Python script.
 
 ## File Output
-The retrieved information is written in a file named 'countries.txt' and it is found in the same directory where the Python script is stored.
+The retrieved information is written in a file named 'countries.txt' and it is found in the same directory where the Python script is executed.
 
-## To reuse the code for this application, note the following 
-- Ensure that valid API keys for the Rest Countries API and the News API are obtained and replaced with the placeholder values in the script with the actual API keys.
-- The script will create a text file containing the country information in the same directory where the script is executed.
+## Note
+- The application requires internet connectivity to fetch the specified information from the APIs
+- This application utilizes the `requests` library for making HTTP requests to the APIs and the `pprint` module for pretty-printing of complex data structures.
 
 
 
