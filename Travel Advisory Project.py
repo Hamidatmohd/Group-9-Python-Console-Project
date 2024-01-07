@@ -10,10 +10,50 @@ class tripInformation:
   def __init__(self, userInput=''):
       self.userInput = userInput if userInput else input('Enter the name of the country you wish to travel to: ')
 
-  #api call for countries, to get information from the rest couuntry api
+  #api call for countries, to get information from the rest country api
 
   def getGeneralInfo(self):
     formatCountryName = self.userInput.replace(' ', '%20')   #addes %20 into the endpoint url to replace spaces
     countryUrl = 'https://restcountries.com/v3.1/name/{name}'.format(name = formatCountryName) #endpoint
     response = requests.get(countryUrl) #making a call to the api
     checkConnection = response.status_code  #gets the status code and stores it to a variable
+
+    #api call for getting latest news from countries
+  #api key is the same for all free calls
+  #apikey= 9e3bd8f42a84440a86fe64d1d56391d4
+
+
+def getNewsInfo(self):
+      # Build the URL for the news API using the provided API key and user input (country)
+      newsUrl ='https://newsapi.org/v2/top-headlines?q={country}&apiKey=9e3bd8f42a84440a86fe64d1d56391d4'.format(country = self.userInput) #endpoint
+
+       # Make a GET request to the news API
+      response = requests.get(newsUrl)
+
+      # Check if the connection was successful (status code 200)
+      checkConnection= response.status_code
+      if checkConnection != 200:
+        print('error! getting news information from the country')
+      else:
+        newsData = response.json()
+
+#api call to obtain weather information on the country selected above
+def getWeatherInfo(self):
+    #remove api - key
+    api_key = 'e92f077c81984a46baba3714a1d18d90'
+
+    endpoint = 'http://api.openweathermap.org/data/2.5/weather'
+
+    payload = {
+        'unit': 'metrics',
+        'appid': api_key
+    }
+    payload['q'] = self.userInput
+
+    response = requests.get(url= endpoint, params= payload)
+    checkConnection= response.status_code
+    if checkConnection != 200:
+      print('error!, Country does not exist')
+    else:
+      weatherData=response.json()
+  

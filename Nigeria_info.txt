@@ -1,0 +1,5 @@
+Country Name: Nigeria
+Capital: Abuja
+Population: 206139587
+Region: Africa
+Subregion: Western Africa
