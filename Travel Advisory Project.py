@@ -56,4 +56,34 @@ def getWeatherInfo(self):
       print('error!, Country does not exist')
     else:
       weatherData=response.json()
-  
+      
+     # Open the 'countries.txt' file in append mode and use 'file' as the file handle
+      with open('countries.txt', 'a') as file:
+    
+    # Extract the 'main' information from the 'weatherData' dictionary
+        mainInfo = weatherData.get('main', {})
+        
+        # Write introductory information to the file
+        file.write('This is the weather forecast for today in the country:'+'\n'+ '\n'+ '\n')
+        
+        # Iterate through the 'mainInfo' dictionary and write key-value pairs to the file
+        for key, value in mainInfo.items():
+            file.write(f"{key}: {value}\n")
+
+    # Extract the 'weather' information from the 'weatherData' dictionary
+        weatherInfo = weatherData.get('weather', [])
+
+          # A section header for additional weather information to the file
+        file.write('\nAdditional Weather Information about the weather:'+'\n'+ '\n'+ '\n')
+                    
+        for info in weatherInfo:
+          for key, value in info.items():
+                file.write(f"{key}: {value}\n")
+
+# Create an instance of the 'tripInformation' class
+trip = tripInformation()
+
+# Call methods to gather general, news, and weather information for the trip
+trip.getGeneralInfo()
+trip.getNewsInfo()
+trip.getWeatherInfo()
