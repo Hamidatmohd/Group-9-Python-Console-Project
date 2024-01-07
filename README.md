@@ -4,24 +4,26 @@ This Python console application is designed to assist prospective travelers in r
 
 ## Prerequisites
 - Python 3. x
-- `requests` module
+- `requests` module and pprints
 
 ## Setup
-1. Obtain API keys for the Rest Countries API, OpenWeather API and the News API.
-2. Install the `requests` module using the following command:
+1. Obtain API keys for the Rest Countries API, OpenWeather API, and the News API.
+## Installation
+1. Clone the repository to your local machine
+2. Install the needed Python packages using the following command: 
    ```
-   pip install requests
+   pip install requests 
+   pip._vendor
+   pprint import pprint as pp
    ```
 
 ## Usage
-1. Open the terminal or command prompt.
-2. Navigate to the directory where the Python script is saved.
-3. Run the script using the following command:
-   ```
-   python country_info_app.py
-   ```
-4. Enter the name of the country when prompted.
-5. The script retrieves and saves this information: 1. country name, languages, currencies 2. Related latest news articles about the country, date of news publications, and URLs in a file named 'countries.txt'
+1. Navigate to the directory where the Python script tripInformation.py is saved.
+2. Run the script in a Python environment, if this is properly executed, the application prompts the user to enter the country name they want to retrieve information on.
+3. Enter the name of the country when prompted.
+4. The application script retrieves, displays, and saves this information for the specified country:
+    i. country name, languages, and currencies
+   ii. Related latest news headlines about the country, date of news publications, URLs, and the current weather forecast in a file named 'countries.txt'
 
 # The script requires access to the following APIs:
 https://restcountries.com/ for general country information.
