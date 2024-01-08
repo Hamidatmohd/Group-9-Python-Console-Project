@@ -74,6 +74,29 @@ def getWeatherInfo(self):
       print('error!, Country does not exist')
     else:
       weatherData=response.json()
+
+        # Iterate through each article in the 'articles' list
+for article in articles:
+    # Write the title of the article to the file
+    file.write(f"Title: {article['title']}\n")
+
+    # Write the author of the article to the file
+    file.write(f"Author: {article['author']}\n")
+
+    # Write the description of the article to the file
+    file.write(f"Description: {article['description']}\n")
+
+    # Write the published date of the article to the file
+    file.write(f"Published At: {article['publishedAt']}\n")
+
+    # Write the URL of the article to the file
+    file.write(f"URL: {article['url']}\n")
+
+    # Write the URL to the image associated with the article to the file
+    file.write(f"URL to Image: {article['urlToImage']}\n")
+
+    # Write the content of the article to the file
+    file.write(f"Content: {article['content']}\n\n")
       
      # Open the 'countries.txt' file in append mode and use 'file' as the file handle
       with open('countries.txt', 'a') as file:
