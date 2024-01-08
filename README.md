@@ -1,3 +1,13 @@
+# Contributors
+
+1. Taiwo Ogunkeye - Suggested the class idea and the idea of also putting th APIs in different functions. Worked on calling the country API
+2. Olajumoke Olufemi - Worked on the readme and writing the country API output to the file.
+3. Lynatte Nantunga - Worked on calling the News API 
+4. Gift Ezeh - Worked on writing the weather API to the file
+5. Adanma Iheanacho - Worked on extracting the values from the list
+6. Dorah Buteme - Worked on calling the weather API
+7. Hamidat Mohammed - Worked on writing the weather API output to the file 
+
 # Travel InfoHub Console App
 
 This Python console application is designed to assist prospective travelers in retrieving and displaying information about a specific country using the Rest Countries API, OpenWeather, and the News API. It allows users to input a country name, and fetch details such as the country's name, languages, currencies, and alternative spellings and write this information into a text file. Additionally, the app retrieves news articles related to the specified country and displays their titles, sources, and URLs. This app also helps with the provision of current weather updates of the prospective traveler's choice.
@@ -7,7 +17,8 @@ This Python console application is designed to assist prospective travelers in r
 - `requests` module and pprints
 
 ## Setup
-1. Obtain API keys for the Rest Countries API, OpenWeather API, and the News API.
+1. Obtain API keys for the APIs if needed.
+   
 ## Installation
 1. Clone the repository to your local machine
 2. Install the needed Python packages using the following command: 
@@ -32,8 +43,8 @@ https://api.openweathermap.org/data/2.5/weather for weather forecast
 
 ## Code Explanation
 - The 'tripInformation' class comprises methods for retrieving general country information, weather, and news data.
-- The `main` function:(tripInformation, trip.getGeneralInfo, trip.getNewsInfo,
-trip.getWeatherInfo) serves as the application's entry point, where users can input the country name, and the app retrieves and displays the country information, weather forecast, and news articles.
+- The `main` function:(trip.getGeneralInfo, trip.getNewsInfo,
+trip.getWeatherInfo) serves as the application's entry point, where users can input the country name, and the app retrieves and displays the country information, news articles and weather forecast 
 - For a detailed explanation, check the comments in the Python script.
 
 ## File Output
