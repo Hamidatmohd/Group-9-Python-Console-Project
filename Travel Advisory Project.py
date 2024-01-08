@@ -34,7 +34,7 @@ class tripInformation:
   #apikey= 9e3bd8f42a84440a86fe64d1d56391d4
 
 
-def getNewsInfo(self):
+    def getNewsInfo(self):
       # Build the URL for the news API using the provided API key and user input (country)
       newsUrl ='https://newsapi.org/v2/top-headlines?q={country}&apiKey=9e3bd8f42a84440a86fe64d1d56391d4'.format(country = self.userInput) #endpoint
 
@@ -56,75 +56,74 @@ def getNewsInfo(self):
           with open('countries.txt', 'a') as file:  # Open 'countries.txt' file in append mode
             articles = newsData.get('articles', [])  # Retrieve the list of articles from the JSON data
             file.write('these are the top headlines on the country of choice today:'+'\n'+ '\n'+ '\n')# Write a header to the file indicating that these are the top headlines for the selected country today
-#api call to obtain weather information on the country selected above
-def getWeatherInfo(self):
-    #remove api - key
-    api_key = 'e92f077c81984a46baba3714a1d18d90'
-    
+            
+            # Iterate through each article in the 'articles' list
+            for article in articles:
+                # Write the title of the article to the file
+                file.write(f"Title: {article['title']}\n")
+            
+                # Write the author of the article to the file
+                file.write(f"Author: {article['author']}\n")
+            
+                # Write the description of the article to the file
+                file.write(f"Description: {article['description']}\n")
+            
+                # Write the published date of the article to the file
+                file.write(f"Published At: {article['publishedAt']}\n")
+            
+                # Write the URL of the article to the file
+                file.write(f"URL: {article['url']}\n")
+            
+                # Write the URL to the image associated with the article to the file
+                file.write(f"URL to Image: {article['urlToImage']}\n")
+            
+                # Write the content of the article to the file
+                file.write(f"Content: {article['content']}\n\n")
 
-    payload = {
-        'unit': 'metrics',
-        'appid': api_key
-    }
-    payload['q'] = self.userInput
 
-    response = requests.get(url= endpoint, params= payload)
-    checkConnection= response.status_code
-    if checkConnection != 200:
-      print('error!, Country does not exist')
-    else:
-      weatherData=response.json()
 
-        # Iterate through each article in the 'articles' list
-for article in articles:
-    # Write the title of the article to the file
-    file.write(f"Title: {article['title']}\n")
 
-    # Write the author of the article to the file
-    file.write(f"Author: {article['author']}\n")
-
-    # Write the description of the article to the file
-    file.write(f"Description: {article['description']}\n")
-
-    # Write the published date of the article to the file
-    file.write(f"Published At: {article['publishedAt']}\n")
-
-    # Write the URL of the article to the file
-    file.write(f"URL: {article['url']}\n")
-
-    # Write the URL to the image associated with the article to the file
-    file.write(f"URL to Image: {article['urlToImage']}\n")
-
-    # Write the content of the article to the file
-    file.write(f"Content: {article['content']}\n\n")
-      
-     # Open the 'countries.txt' file in append mode and use 'file' as the file handle
-      with open('countries.txt', 'a') as file:
-    
-    # Extract the 'main' information from the 'weatherData' dictionary
-        mainInfo = weatherData.get('main', {})
+            #api call to obtain weather information on the country selected above
+        def getWeatherInfo(self):
+            
+            api_key = 'e92f077c81984a46baba3714a1d18d90'
+            payload = {
+                'unit': 'metrics',
+                'appid': api_key
+            }
+            payload['q'] = self.userInput
         
-        # Write introductory information to the file
-        file.write('This is the weather forecast for today in the country:'+'\n'+ '\n'+ '\n')
+            response = requests.get(url= endpoint, params= payload)
+            checkConnection= response.status_code
+            if checkConnection != 200:
+              print('error!, Country does not exist')
+            else:
+              weatherData=response.json()
+              # Open the 'countries.txt' file in append mode and use 'file' as the file handle
+              with open('countries.txt', 'a') as file:
+            
+                # Extract the 'main' information from the 'weatherData' dictionary
+                mainInfo = weatherData.get('main', {})
+                file.write('This is the weather forecast for today in the country:'+'\n'+ '\n'+ '\n')
+                
+                # Iterate through the 'mainInfo' dictionary and write key-value pairs to the file
+                for key, value in mainInfo.items():
+                    file.write(f"{key}: {value}\n")
         
-        # Iterate through the 'mainInfo' dictionary and write key-value pairs to the file
-        for key, value in mainInfo.items():
-            file.write(f"{key}: {value}\n")
-
-    # Extract the 'weather' information from the 'weatherData' dictionary
-        weatherInfo = weatherData.get('weather', [])
-
-          # A section header for additional weather information to the file
-        file.write('\nAdditional Weather Information about the weather:'+'\n'+ '\n'+ '\n')
-                    
-        for info in weatherInfo:
-          for key, value in info.items():
-                file.write(f"{key}: {value}\n")
-
-# Create an instance of the 'tripInformation' class
-trip = tripInformation()
-
-# Call methods to gather general, news, and weather information for the trip
-trip.getGeneralInfo()
-trip.getNewsInfo()
-trip.getWeatherInfo()
+                # Extract the 'weather' information from the 'weatherData' dictionary
+                weatherInfo = weatherData.get('weather', [])
+        
+                  # A section header for additional weather information to the file
+                file.write('\nAdditional Weather Information about the weather:'+'\n'+ '\n'+ '\n')
+                            
+                for info in weatherInfo:
+                  for key, value in info.items():
+                        file.write(f"{key}: {value}\n")
+        
+        # Create an instance of the 'tripInformation' class
+        trip = tripInformation()
+        
+        # Call methods to gather general, news, and weather information for the trip
+        trip.getGeneralInfo()
+        trip.getNewsInfo()
+        trip.getWeatherInfo()
