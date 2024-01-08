@@ -41,8 +41,15 @@ def getNewsInfo(self):
 def getWeatherInfo(self):
     #remove api - key
     api_key = 'e92f077c81984a46baba3714a1d18d90'
-
-    endpoint = 'http://api.openweathermap.org/data/2.5/weather'
+        if newsData['articles'] == []: # Check if there are no articles for the selected country
+          with open('countries.txt', 'a') as file:
+            file.write('\n \n no top headlines today for this country! Try again later \n \n')
+        else:  # If there are articles, proceed to process and write them to the 'countries.txt' file
+          #check the input vallidity of a country with spaces such as united kingdom
+          #pp(newsData)
+          with open('countries.txt', 'a') as file:  # Open 'countries.txt' file in append mode
+            articles = newsData.get('articles', [])  # Retrieve the list of articles from the JSON data
+            file.write('these are the top headlines on the country of choice today:'+'\n'+ '\n'+ '\n')# Write a header to the file indicating that these are the top headlines for the selected country today
 
     payload = {
         'unit': 'metrics',
