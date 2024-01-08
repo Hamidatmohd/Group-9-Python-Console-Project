@@ -37,9 +37,9 @@ This Python console application is designed to assist prospective travelers in r
    ii. Related latest news headlines about the country, date of news publications, URLs, and the current weather forecast in a file named 'countries.txt'
 
 # The script requires access to the following APIs:
-https://restcountries.com/ for general country information.
-https://newsapi.org/v2/top-headlines for retrieving the latest news articles
-https://api.openweathermap.org/data/2.5/weather for weather forecast
+- https://restcountries.com/ for general country information.
+- https://newsapi.org/v2/top-headlines for retrieving the latest news articles
+- https://api.openweathermap.org/data/2.5/weather for weather forecast
 
 ## Code Explanation
 - The 'tripInformation' class comprises methods for retrieving general country information, weather, and news data.
