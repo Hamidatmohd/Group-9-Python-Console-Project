@@ -1,6 +1,11 @@
 # Contributors
 
-1. Taiwo Ogunkeye - Suggested the class idea and the idea of also putting th APIs in different functions. Worked on calling the country API
+1. Taiwo Ogunkeye - 
+	a)Suggested the class idea and the idea of also putting th APIs in different functions. 
+	b) Worked on calling the country API
+	c) Created all the endpoint strings abd formatted them
+	d) Supervised consistent code indentation
+	e) Created the api key used in the weather api
 2. Olajumoke Olufemi - Worked on the readme and writing the country API output to the file.
 3. Lynatte Nantunga - Worked on calling the News API 
 4. Gift Ezeh - Worked on writing the weather API to the file
@@ -14,7 +19,7 @@ This Python console application is designed to assist prospective travelers in r
 
 ## Prerequisites
 - Python 3. x
-- `requests` module and pprints
+- `requests` module
 
 ## Setup
 1. Obtain API keys for the APIs if needed.
@@ -25,7 +30,6 @@ This Python console application is designed to assist prospective travelers in r
    ```
    pip install requests 
    pip._vendor
-   pprint import pprint as pp
    ```
 
 ## Usage
@@ -52,7 +56,7 @@ The retrieved information is written in a file named 'countries.txt' and it is f
 
 ## Note
 - The application requires internet connectivity to fetch the specified information from the APIs
-- This application utilizes the `requests` library for making HTTP requests to the APIs and the `pprint` module for pretty-printing of complex data structures.
+- This application utilizes the `requests` library for making HTTP requests to the APIs.
 
 
 
