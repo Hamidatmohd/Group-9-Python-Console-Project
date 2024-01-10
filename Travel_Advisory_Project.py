@@ -26,6 +26,7 @@ class tripInformation:
         #Iterate through each country in the response data
         for i in countryData:
           file.write('Name: ' + str(i.get('name')) + '\n') # Write the country's name to the file and creates a new line
+          file.write('Capital: ' + str(i.get('capital')) + '\n') #Write the country's capital to the file
           file.write('Languages: ' + str(i.get('languages')) + '\n') # Write the country's languages to the file
           file.write('Currencies: ' + str(i.get('currencies')) + '\n') # Write the country's currencies to the file
           file.write('Alt Spellings: ' + str(i.get('altSpellings')) + '\n\n') # Write the country's alternative spellings to the file and creates two new lines in the file
