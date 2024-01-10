@@ -1,18 +1,3 @@
-# Contributors
-
-1. Taiwo Ogunkeye - 
-	a)Suggested the class idea and the idea of also putting th APIs in different functions. 
-	b) Worked on calling the country API
-	c) Created all the endpoint strings abd formatted them
-	d) Supervised consistent code indentation
-	e) Created the api key used in the weather api
-2. Olajumoke Olufemi - Worked on the readme and writing the country API output to the file.
-3. Lynatte Nantunga - Worked on calling the News API 
-4. Gift Ezeh - Worked on writing the weather API to the file
-5. Adanma Iheanacho - Worked on extracting the values from the list
-6. Dorah Buteme - Worked on calling the weather API
-7. Hamidat Mohammed - Worked on writing the weather API output to the file 
-
 # Travel InfoHub Console App
 
 This Python console application is designed to assist prospective travelers in retrieving and displaying information about a specific country using the Rest Countries API, OpenWeather, and the News API. It allows users to input a country name, and fetch details such as the country's name, languages, currencies, and alternative spellings and write this information into a text file. Additionally, the app retrieves news articles related to the specified country and displays their titles, sources, and URLs. This app also helps with the provision of current weather updates of the prospective traveler's choice.
@@ -57,6 +42,16 @@ The retrieved information is written in a file named 'countries.txt' and it is f
 ## Note
 - The application requires internet connectivity to fetch the specified information from the APIs
 - This application utilizes the `requests` library for making HTTP requests to the APIs.
+
+# Contributors
+
+1. Taiwo Ogunkeye - Suggested the class idea and the idea of also putting the APIs in different functions. Worked on calling the country API, also Supervised consistent code indentation
+2. Olajumoke Olufemi - Worked on the readme and writing the country API output to the file.
+3. Lynatte Nantunga - Worked on calling the News API 
+4. Gift Ezeh - Worked on writing the weather API to the file
+5. Adanma Iheanacho - Worked on extracting the values from the list
+6. Dorah Buteme - Worked on calling the weather API and the powerpoint file
+7. Hamidat Mohammed - Worked on writing the weather API output to the file and the presentation 
 
 
 
