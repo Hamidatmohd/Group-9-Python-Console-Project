@@ -36,11 +36,11 @@ class tripInformation:
 
     #api for getting latest news from countries
     #api key is the same for all free calls
-    #apikey= 9e3bd8f42a84440a86fe64d1d56391d4
+    
     
   def getNewsInfo(self):
       # Build the URL for the news API using the provided API key and user input (country)
-      newsUrl ='https://newsapi.org/v2/top-headlines?q={country}&apiKey=9e3bd8f42a84440a86fe64d1d56391d4'.format(country = self.userInput) #endpoint
+      newsUrl ='https://newsapi.org/v2/top-headlines?q={country}&apiKey=insertAPIKey'.format(country = self.userInput) #endpoint
 
       response = requests.get(newsUrl)
 
@@ -69,7 +69,7 @@ class tripInformation:
                  file.write(f"Content: {article['content']}\n\n")
             #api call to obtain weather information on the country selected above
   def getWeatherInfo(self):
-      api_key = 'e92f077c81984a46baba3714a1d18d90'
+      api_key = ''
       
       endpoint = 'http://api.openweathermap.org/data/2.5/weather'
       payload = {
